@@ -1,0 +1,298 @@
+@import 'reset';
+@import '_variables';
+
+body {
+    font-family: $main-font;
+}
+
+.video-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    &__background {
+        z-index: -1;
+        position: absolute;
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .overlay {
+        position: absolute;
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    &__content {
+        color: white;
+        z-index: 2;
+    }
+}
+
+.list-watches {
+    min-width: 250px;
+    min-height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: $red-bg;
+    transition: 2s;
+
+    &__element {
+        &__time {
+            display: inline-block;
+            min-width: 25px;
+            min-height: 20px;
+            padding: 3px;
+            border: dotted $red 5px;
+            font-size: 1em;
+            font-weight: bold;
+            margin: 2px;
+            text-align: center;
+            line-height: 1em;
+            background-color: $red-bg;
+            transition: 2s;
+
+            .unit {
+                font-size: 0.5em;
+            }
+        }
+
+        &__remove-button {
+            padding: 5px 5px 5px 10px;
+            background-color: $red;
+            color: white;
+            font-size: 1.2em;
+            border: 1px white inset;
+            border-radius: 20px;
+            letter-spacing: 5px;
+            transition: 2s;
+        }
+    }
+}
+
+.config {
+    background-color: $red-bg;
+    min-height: 400px;
+    min-width: 250px;
+    border-radius: 8px;
+    position: absolute;
+    right: -250px;
+    bottom: 0;
+    transition: 2s;
+
+    &__open-close {
+        position: relative;
+        top: 175px;
+        left: -20px;
+        width: 40px;
+        height: 40px;
+
+        .fa-chevron-left {
+            font-size: 30px;
+            color: $red;
+            transition: 1s;
+        }
+    }
+
+    &__purple {
+        width: 40px;
+        height: 40px;
+        background: #EF2FA2;
+        margin: 15px 5px;
+        display: inline-block;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__green {
+        width: 40px;
+        height: 40px;
+        background: #5BFF62;
+        margin: 15px 5px;
+        display: inline-block;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__yellow {
+        width: 40px;
+        height: 40px;
+        background: #FFF851;
+        margin: 15px 5px;
+        display: inline-block;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__orange {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(#000, #FF851B);
+        margin: 15px 5px;
+        display: inline-block;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__aqua {
+        width: 40px;
+        height: 40px;
+        background: #7fdbff;
+        margin: 15px 5px;
+        display: inline-block;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__language {
+        width: 40px;
+        height: 40px;
+        color: white;
+        text-align: center;
+        font-size: 1em;
+        line-height: 2em;
+        padding: 5px 10px;
+        margin-left: 30px;
+        border: solid $red 1px;
+        background-color: $red-bg;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.counter {
+    padding: 10vh 50px;
+
+    &__time {
+        display: inline-block;
+        min-width: 80px;
+        min-height: 50px;
+        padding: 20px 5px;
+        border: dotted $red 5px;
+        font-size: 2.2em;
+        font-weight: bold;
+        margin: 10px;
+        text-align: center;
+        line-height: 1em;
+        background-color: $red-bg;
+        transition: 2s;
+
+        .unit {
+            font-size: 0.5em;
+        }
+    }
+
+    &__button {
+        padding: 15px 30px;
+        background-color: $red;
+        color: white;
+        font-size: 1.5em;
+        border: 1px white inset;
+        border-radius: 20px;
+        letter-spacing: 5px;
+    }
+}
+
+.destination-time {
+    margin-top: 15vh;
+
+    &__title {
+        font-size: 24px;
+    }
+
+    &__input {
+        margin-top: 2vh;
+        font-size: 16px;
+        font-weight: bold;
+        min-width: 200px;
+        background-color: rgba(0, 0, 0, 0.05);
+        color: white;
+        border: 0;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__input--error {
+        border: dotted $red 2px;
+    }
+
+    &__error {
+        color: $red;
+        font-size: 1.1em;
+        font-weight: bold;
+        margin-top: 0.1em;
+    }
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .video-container__background {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .video-container__background {
+        width: auto;
+        height: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .counter {
+        padding: 5vh 20px;
+
+        &__time {
+            min-width: 60px;
+            min-height: 40px;
+            padding: 15px 5px;
+            font-size: 1.6em;
+            line-height: .7em;
+            margin: 5px;
+        }
+    }
+
+    .destination-time {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .counter {
+        padding: 5vh 10px;
+
+        &__time {
+            min-width: 30px;
+            min-height: 30px;
+            padding: 8px;
+            font-size: 1.2em;
+            margin: 3px;
+        }
+    }
+}
