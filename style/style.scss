@@ -171,6 +171,30 @@ body {
         }
     }
 
+    &__red {
+        width: 40px;
+        height: 40px;
+        background: red;
+        margin: 15px 5px;
+        display: inline-block;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__blue {
+        width: 40px;
+        height: 40px;
+        background: blue;
+        margin: 15px 5px;
+        display: inline-block;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
     &__language {
         width: 40px;
         height: 40px;

@@ -1,0 +1,27 @@
+{
+  "name": "counter",
+  "version": "1.0.1",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sosiak/counter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sosiak/counter/issues"
+  },
+  "homepage": "https://github.com/sosiak/counter#readme",
+  "dependencies": {
+    "http-server": "^0.11.1",
+    "localhost": "^0.3.0"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2"
+  },
+  "description": ""
+}

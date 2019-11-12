@@ -101,19 +101,17 @@ function updateTextInDiv(where, text) {
     target.textContent = text;
 }
 
-function createConfig(where) {
+function createConfig(where, arrayColors, arrayLang) {
     createDiv("video-container__content", `${where}`);
     createDiv(`${where}`, "config__open-close");
     const openCloseIcon = (document.querySelector(".config__open-close").innerHTML =
         '<i class="fas fa-chevron-left"></i>');
-    createDiv(`${where}`, "config__purple color");
-    createDiv(`${where}`, "config__green color");
-    createDiv(`${where}`, "config__yellow color");
-    createDiv(`${where}`, "config__orange color");
-    createDiv(`${where}`, "config__aqua color");
-    createDivWithText(`${where}`, "config__language", "PL", "pl");
-    createDivWithText(`${where}`, "config__language", "DE", "de");
-    createDivWithText(`${where}`, "config__language", "EN", "en");
+    for (let i = 0; i < arrayColors.length; i++) {
+        createDiv(`${where}`, `config__${arrayColors[i]} color`);
+    }
+    for (let j = 0; j < arrayLang.length; j++) {
+        createDivWithText(`${where}`, "config__language", `${arrayLang[j].toUpperCase()}`, `${arrayLang[j]}`);
+    }
     chooseLang();
     openClose();
     chooseColor();
@@ -398,18 +396,25 @@ function smallInterval(time) {
 }
 //change language
 function chooseLang() {
-    pl.addEventListener("click", () => {
-        j = 0;
-        return j;
-    })
-    de.addEventListener("click", () => {
-        j = 1;
-        return j;
-    })
-    en.addEventListener("click", () => {
-        j = 2;
-        return j;
-    })
+    if (pl !== null) {
+        pl.addEventListener("click", () => {
+            j = 0;
+            return j;
+        })
+    }
+    if (de !== null) {
+        de.addEventListener("click", () => {
+            j = 1;
+            return j;
+        })
+    }
+    if (en !== null) {
+        en.addEventListener("click", () => {
+            j = 2;
+            return j;
+        })
+    }
+
 }
 
 function openClose() {
@@ -435,26 +440,36 @@ function chooseColor() {
     const yellowDiv = document.querySelector('.config__yellow');
     const orangeDiv = document.querySelector('.config__orange');
     const aquaDiv = document.querySelector('.config__aqua');
-    purpleDiv.addEventListener('click', () => {
-        k = 0;
-        return k;
-    })
-    greenDiv.addEventListener('click', () => {
-        k = 1;
-        return k;
-    })
-    yellowDiv.addEventListener('click', () => {
-        k = 2;
-        return k;
-    })
-    orangeDiv.addEventListener('click', () => {
-        k = 3;
-        return k;
-    })
-    aquaDiv.addEventListener('click', () => {
-        k = 4;
-        return k;
-    })
+    if (purpleDiv !== null) {
+        purpleDiv.addEventListener('click', () => {
+            k = 0;
+            return k;
+        })
+    }
+    if (greenDiv !== null) {
+        greenDiv.addEventListener('click', () => {
+            k = 1;
+            return k;
+        })
+    }
+    if (yellowDiv !== null) {
+        yellowDiv.addEventListener('click', () => {
+            k = 2;
+            return k;
+        })
+    }
+    if (orangeDiv !== null) {
+        orangeDiv.addEventListener('click', () => {
+            k = 3;
+            return k;
+        })
+    }
+    if (aquaDiv !== null) {
+        aquaDiv.addEventListener('click', () => {
+            k = 4;
+            return k;
+        })
+    }
 }
 
 function changeTheme(mainColor, bgColor) {

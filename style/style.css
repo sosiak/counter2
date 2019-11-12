@@ -186,6 +186,30 @@ body {
   cursor: pointer;
 }
 
+.config__red {
+  width: 40px;
+  height: 40px;
+  background: red;
+  margin: 15px 5px;
+  display: inline-block;
+}
+
+.config__red:hover {
+  cursor: pointer;
+}
+
+.config__blue {
+  width: 40px;
+  height: 40px;
+  background: blue;
+  margin: 15px 5px;
+  display: inline-block;
+}
+
+.config__blue:hover {
+  cursor: pointer;
+}
+
 .config__language {
   width: 40px;
   height: 40px;
