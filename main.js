@@ -1,6 +1,6 @@
 content(document.body, "video-container");
 createDiv("video-container", "overlay");
-createVideoBackground("overlay", "video-container__background", "background-video.jpg", "background-video.mp4");
+createVideoBackground("overlay", "video-container__background", "background-video.jpg", "video-bg.mp4");
 createDiv("video-container", "video-container__content");
 //config
 createConfig('config');
@@ -23,7 +23,8 @@ let currentValueInString = convertDefaultInputValue(inputValueInString); // conv
 let calculatorValue = calculateToListItem(currentValueInString);
 
 const checkInput = document.getElementById(`time-input`);
-let bigCalculate = () => {
+
+function bigCalculate() {
     let inputDateValue = checkInput.value;
     let inputValueInStringAfterChange = inputDateValue.toLocaleString();
     let validateStatus = validateInputDate(inputDateValue, "time-input", lang[6][j], "destination-time__error");
@@ -70,3 +71,5 @@ enDiv.addEventListener("click", () => {
         updateTextInDiv(".btn-watch", lang[7][j]);
     }
 });
+checkVersion();
+createDivWithText('video-container__content', 'footer', version, 'footer');

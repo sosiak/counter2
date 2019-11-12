@@ -56,6 +56,7 @@ body {
             min-height: 20px;
             padding: 3px;
             border: dotted $red 5px;
+            border-radius: 10px;
             font-size: 1em;
             font-weight: bold;
             margin: 2px;
@@ -86,10 +87,9 @@ body {
     background-color: $red-bg;
     min-height: 400px;
     min-width: 250px;
-    border-radius: 8px;
     position: absolute;
     right: -250px;
-    bottom: 0;
+    bottom: 20px;
     transition: 2s;
 
     &__open-close {
@@ -112,6 +112,7 @@ body {
         background: #EF2FA2;
         margin: 15px 5px;
         display: inline-block;
+        border-radius: 50%;
 
         &:hover {
             cursor: pointer;
@@ -124,6 +125,7 @@ body {
         background: #5BFF62;
         margin: 15px 5px;
         display: inline-block;
+        border-radius: 50%;
 
         &:hover {
             cursor: pointer;
@@ -136,6 +138,7 @@ body {
         background: #FFF851;
         margin: 15px 5px;
         display: inline-block;
+        border-radius: 50%;
 
         &:hover {
             cursor: pointer;
@@ -148,6 +151,7 @@ body {
         background: linear-gradient(#000, #FF851B);
         margin: 15px 5px;
         display: inline-block;
+        border-radius: 50%;
 
         &:hover {
             cursor: pointer;
@@ -160,6 +164,7 @@ body {
         background: #7fdbff;
         margin: 15px 5px;
         display: inline-block;
+        border-radius: 50%;
 
         &:hover {
             cursor: pointer;
@@ -192,6 +197,7 @@ body {
         min-width: 80px;
         min-height: 50px;
         padding: 20px 5px;
+        border-radius: 10px;
         border: dotted $red 5px;
         font-size: 2.2em;
         font-weight: bold;
@@ -239,15 +245,31 @@ body {
     }
 
     &__input--error {
-        border: dotted $red 2px;
+        border: dotted red 2px;
     }
 
     &__error {
-        color: $red;
+        color: red;
         font-size: 1.1em;
         font-weight: bold;
         margin-top: 0.1em;
     }
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 250px;
+    right: 0;
+    width: 100%;
+    min-height: 20px;
+    line-height: 20px;
+    font-size: 10px;
+    color: white;
+    font-weight: bold;
+    background-color: $red-bg;
+    padding-left: 35%;
+    transition: 2s;
 }
 
 @media (min-aspect-ratio: 16/9) {

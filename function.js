@@ -20,12 +20,13 @@ const colorsValues = [
 let j = 0; //lang index
 let k = 0; //colors index
 
-const content = (place, nameClass) => {
+function content(place, nameClass) {
     const videoContainer = document.createElement('section');
     videoContainer.className = nameClass;
     place.appendChild(videoContainer);
 }
-const createVideoBackground = (target, nameClass, posterFile, videoFile) => {
+
+function createVideoBackground(target, nameClass, posterFile, videoFile) {
     const videoBackground = document.createElement('video');
     videoBackground.className = nameClass
     videoBackground.setAttribute('poster', posterFile);
@@ -39,21 +40,24 @@ const createVideoBackground = (target, nameClass, posterFile, videoFile) => {
     const place = document.querySelector(`.${target}`);
     place.appendChild(videoBackground);
 }
-const createDiv = (where, nameClass, id) => {
+
+function createDiv(where, nameClass, id) {
     const div = document.createElement('div');
     div.className = nameClass;
     div.id = id;
     const target = document.querySelector(`.${where}`);
     target.appendChild(div);
 }
-const createHeader = (where, nameClass, text) => {
+
+function createHeader(where, nameClass, text) {
     const headerInput = document.createElement('h1');
     headerInput.className = nameClass;
     headerInput.textContent = text;
     const target = document.querySelector(`.${where}`);
     target.appendChild(headerInput);
 }
-const createDateInputWithErrorDiv = (where, nameClass, id, value, nameErrorClass) => {
+
+function createDateInputWithErrorDiv(where, nameClass, id, value, nameErrorClass) {
     const input = document.createElement('input');
     input.setAttribute('id', id);
     input.setAttribute('type', 'datetime-local');
@@ -67,19 +71,22 @@ const createDateInputWithErrorDiv = (where, nameClass, id, value, nameErrorClass
     target.appendChild(input);
     target.appendChild(errorParagraph);
 }
-const createButton = (where, nameClass, text) => {
+
+function createButton(where, nameClass, text) {
     const addBtn = document.createElement('button');
     addBtn.className = nameClass;
     addBtn.textContent = text;
     const target = document.querySelector(`.${where}`);
     target.appendChild(addBtn);
 }
-const removeButton = (where, nameClass) => {
+
+function removeButton(where, nameClass) {
     const from = document.querySelector(`.${where}`);
     const btn = document.querySelector(`.${nameClass}`);
     from.removeChild(btn);
 }
-const createDivWithText = (where, nameClass, text, id) => {
+
+function createDivWithText(where, nameClass, text, id) {
     const div = document.createElement('div');
     div.className = nameClass;
     div.id = id;
@@ -88,11 +95,13 @@ const createDivWithText = (where, nameClass, text, id) => {
     const element = document.querySelector(`#${id}`);
     element.textContent = text;
 }
-const updateTextInDiv = (where, text) => {
+
+function updateTextInDiv(where, text) {
     const target = document.querySelector(`${where}`);
     target.textContent = text;
 }
-const createConfig = (where) => {
+
+function createConfig(where) {
     createDiv("video-container__content", `${where}`);
     createDiv(`${where}`, "config__open-close");
     const openCloseIcon = (document.querySelector(".config__open-close").innerHTML =
@@ -109,13 +118,15 @@ const createConfig = (where) => {
     openClose();
     chooseColor();
 }
-createDestinationDiv = (whereDiv, classHeader, classInput, inputID, whereError, inputValue, classBtn) => {
+
+function createDestinationDiv(whereDiv, classHeader, classInput, inputID, whereError, inputValue, classBtn) {
     createDiv("video-container__content", `${whereDiv}`);
     createHeader(`${whereDiv}`, `${classHeader}`, lang[5][j]);
     createDateInputWithErrorDiv(`${whereDiv}`, `${classInput}`, `${inputID}`, `${inputValue}`, `${whereError}`);
     createButton(`${whereDiv}`, `${classBtn}`, "+");
 }
-const createParagraphsCountTime = (where, nameClassDays, nameClassHours, nameClassMinutes, nameClassSeconds) => {
+
+function createParagraphsCountTime(where, nameClassDays, nameClassHours, nameClassMinutes, nameClassSeconds) {
     const counterContainer = document.querySelector(`.${where}`);
     for (let i = 1; i <= 4; i++) {
         const createParagraph = document.createElement('p');
@@ -137,7 +148,8 @@ const createParagraphsCountTime = (where, nameClassDays, nameClassHours, nameCla
         counterContainer.appendChild(createParagraph);
     }
 }
-const removeParagraphsCountTime = (where, nameClassElements) => {
+
+function removeParagraphsCountTime(where, nameClassElements) {
     const allParagraphs = document.querySelectorAll(`.${nameClassElements}`);
     const whereDelete = document.querySelector(`.${where}`);
     allParagraphs.forEach((e) => {
@@ -145,7 +157,8 @@ const removeParagraphsCountTime = (where, nameClassElements) => {
     })
 }
 let is_safari;
-const IsSafari = () => {
+
+function IsSafari() {
     if (navigator.userAgent.includes('Safari') &&
         !navigator.userAgent.includes('Chrome')) {
         is_safari = true;
@@ -155,13 +168,14 @@ const IsSafari = () => {
     return is_safari;
 }
 // defaultValue
-const defaultInputValue = function (from) {
+function defaultInputValue(from) {
     const inputDate = document.getElementById(`${from}`);
     let inputDateValue = inputDate.value;
     let inputValueInString = inputDateValue.toLocaleString();
     return inputValueInString;
 }
-const convertDefaultInputValue = function (value) {
+
+function convertDefaultInputValue(value) {
     if (is_safari) {
         let currentValueInString = value.substr(0, 10) + "T" + value.substr(11, 5) + ":00.000";
         return currentValueInString;
@@ -170,7 +184,8 @@ const convertDefaultInputValue = function (value) {
         return currentValueInString;
     }
 }
-const convertDateTime = (value) => {
+
+function convertDateTime(value) {
     if (is_safari) {
         return dateStringChange = value.substr(0, 10) + "T" + value.substr(11, 5) + ":00.000";
     } else {
@@ -178,7 +193,8 @@ const convertDateTime = (value) => {
     }
 
 }
-const validateInputDate = (from, checkedInput, errorText, errorDiv) => {
+
+function validateInputDate(from, checkedInput, errorText, errorDiv) {
     let dateToValidate = new Date(from);
     const target = document.getElementById(`${checkedInput}`);
     const errDiv = document.querySelector(`.${errorDiv}`);
@@ -194,7 +210,8 @@ const validateInputDate = (from, checkedInput, errorText, errorDiv) => {
         return validateStatus;
     }
 }
-const calculateToListItem = (endValue) => {
+
+function calculateToListItem(endValue) {
     let start = new Date().getTime();
     let end;
     if (is_safari) {
@@ -205,7 +222,8 @@ const calculateToListItem = (endValue) => {
     let counterElement = end - start;
     return counterElement;
 }
-const intervalBigCalculator = (time) => {
+
+function intervalBigCalculator(time) {
     createParagraphsCountTime('counter', 'counter__time days', 'counter__time hours', 'counter__time minutes', 'counter__time seconds');
     setInterval(() => {
         calculatorValue = bigCalculate();
@@ -254,7 +272,8 @@ const intervalBigCalculator = (time) => {
         }
     }, time);
 }
-const calculateToTimeValues = (value, time) => {
+
+function calculateToTimeValues(value, time) {
     if (value > 0) {
         let values = {
             days: Math.floor(value / 86400000),
@@ -275,7 +294,8 @@ const calculateToTimeValues = (value, time) => {
         return values;
     }
 }
-const convertTimeValues = (object) => {
+
+function convertTimeValues(object) {
     if (object.days < 10 && object.days >= 0) {
         object.days = `0${object.days}`;
     }
@@ -289,7 +309,8 @@ const convertTimeValues = (object) => {
         object.seconds = `0${object.seconds}`;
     }
 }
-const updateValueInTimeDivs = (object, divFirst, divSecond, divThird, divFourth) => {
+
+function updateValueInTimeDivs(object, divFirst, divSecond, divThird, divFourth) {
     const daysDiv = document.querySelector(`.${divFirst}`);
     const hoursDiv = document.querySelector(`.${divSecond}`);
     const minutesDiv = document.querySelector(`.${divThird}`);
@@ -303,7 +324,8 @@ const updateValueInTimeDivs = (object, divFirst, divSecond, divThird, divFourth)
     createDivWithText(divThird, 'unit', lang[3][j], 'unit-minutes');
     createDivWithText(divFourth, 'unit', lang[4][j], 'unit-seconds');
 }
-const addBtnListener = () => {
+
+function addBtnListener() {
     const valueWhenClick = bigCalculate();
     let smallValues = calculateToTimeValues(valueWhenClick, 1000);
     convertTimeValues(smallValues);
@@ -345,7 +367,8 @@ const addBtnListener = () => {
         }
     })
 }
-const smallInterval = (time) => {
+
+function smallInterval(time) {
     setInterval(function () {
         for (let p = 0; p < counters.length; p++) {
             counters[p].valueInMiliseconds -= time;
@@ -374,7 +397,7 @@ const smallInterval = (time) => {
     }, time);
 }
 //change language
-const chooseLang = () => {
+function chooseLang() {
     pl.addEventListener("click", () => {
         j = 0;
         return j;
@@ -388,7 +411,8 @@ const chooseLang = () => {
         return j;
     })
 }
-const openClose = () => {
+
+function openClose() {
     const config = document.querySelector('.config');
     const leftRightArrow = document.querySelector('i');
     let flagRotation = true;
@@ -404,7 +428,8 @@ const openClose = () => {
         }
     });
 }
-const chooseColor = () => {
+
+function chooseColor() {
     const purpleDiv = document.querySelector('.config__purple');
     const greenDiv = document.querySelector('.config__green');
     const yellowDiv = document.querySelector('.config__yellow');
@@ -431,10 +456,13 @@ const chooseColor = () => {
         return k;
     })
 }
-const changeTheme = (mainColor, bgColor) => {
+
+function changeTheme(mainColor, bgColor) {
     const config = document.querySelector('.config');
     const listWatches = document.querySelector('.list-watches');
     const leftRightArrow = document.querySelector('.fas');
+    const footer = document.querySelector('.footer');
+    footer.style.backgroundColor = `${bgColor}`;
     config.style.backgroundColor = `${bgColor}`;
     listWatches.style.backgroundColor = `${bgColor}`;
     leftRightArrow.style.color = `${mainColor}`;

@@ -67,6 +67,7 @@ body {
   min-height: 20px;
   padding: 3px;
   border: dotted #EF2FA2 5px;
+  border-radius: 10px;
   font-size: 1em;
   font-weight: bold;
   margin: 2px;
@@ -97,10 +98,9 @@ body {
   background-color: rgba(239, 47, 162, 0.4);
   min-height: 400px;
   min-width: 250px;
-  border-radius: 8px;
   position: absolute;
   right: -250px;
-  bottom: 0;
+  bottom: 20px;
   -webkit-transition: 2s;
   transition: 2s;
 }
@@ -126,6 +126,7 @@ body {
   background: #EF2FA2;
   margin: 15px 5px;
   display: inline-block;
+  border-radius: 50%;
 }
 
 .config__purple:hover {
@@ -138,6 +139,7 @@ body {
   background: #5BFF62;
   margin: 15px 5px;
   display: inline-block;
+  border-radius: 50%;
 }
 
 .config__green:hover {
@@ -150,6 +152,7 @@ body {
   background: #FFF851;
   margin: 15px 5px;
   display: inline-block;
+  border-radius: 50%;
 }
 
 .config__yellow:hover {
@@ -163,6 +166,7 @@ body {
   background: linear-gradient(#000, #FF851B);
   margin: 15px 5px;
   display: inline-block;
+  border-radius: 50%;
 }
 
 .config__orange:hover {
@@ -175,6 +179,7 @@ body {
   background: #7fdbff;
   margin: 15px 5px;
   display: inline-block;
+  border-radius: 50%;
 }
 
 .config__aqua:hover {
@@ -207,6 +212,7 @@ body {
   min-width: 80px;
   min-height: 50px;
   padding: 20px 5px;
+  border-radius: 10px;
   border: dotted #EF2FA2 5px;
   font-size: 2.2em;
   font-weight: bold;
@@ -255,14 +261,31 @@ body {
 }
 
 .destination-time__input--error {
-  border: dotted #EF2FA2 2px;
+  border: dotted red 2px;
 }
 
 .destination-time__error {
-  color: #EF2FA2;
+  color: red;
   font-size: 1.1em;
   font-weight: bold;
   margin-top: 0.1em;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 250px;
+  right: 0;
+  width: 100%;
+  min-height: 20px;
+  line-height: 20px;
+  font-size: 10px;
+  color: white;
+  font-weight: bold;
+  background-color: rgba(239, 47, 162, 0.4);
+  padding-left: 35%;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 @media (min-aspect-ratio: 16 / 9) {
