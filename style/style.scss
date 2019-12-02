@@ -64,10 +64,6 @@ body {
             line-height: 1em;
             background-color: $red-bg;
             transition: 2s;
-
-            .unit {
-                font-size: 0.5em;
-            }
         }
 
         &__remove-button {
@@ -177,6 +173,7 @@ body {
         background: red;
         margin: 15px 5px;
         display: inline-block;
+        border-radius: 50%;
 
         &:hover {
             cursor: pointer;
@@ -189,6 +186,7 @@ body {
         background: blue;
         margin: 15px 5px;
         display: inline-block;
+        border-radius: 50%;
 
         &:hover {
             cursor: pointer;
@@ -233,11 +231,12 @@ body {
 
         .unit {
             font-size: 0.5em;
+            margin-top: 5px;
         }
     }
 
     &__button {
-        padding: 15px 30px;
+        padding: 10px 20px;
         background-color: $red;
         color: white;
         font-size: 1.5em;
@@ -310,9 +309,9 @@ body {
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
     .counter {
-        padding: 5vh 20px;
+        padding: 5vh 30px;
 
         &__time {
             min-width: 60px;
@@ -323,15 +322,37 @@ body {
             margin: 5px;
         }
     }
+}
+
+@media (max-width: 992px) {
+    .list-watches {
+        min-width: 150px;
+
+        &__element {
+            &__time {
+                min-width: 15px;
+                min-height: 10px;
+                font-size: .8em;
+            }
+        }
+    }
+
+    .footer {
+        left: 150px;
+    }
+
+    .counter {
+        padding-left: 100px;
+    }
 
     .destination-time {
-        padding: 0 20px;
+        padding-left: 100px;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
     .counter {
-        padding: 5vh 10px;
+        padding-left: 150px;
 
         &__time {
             min-width: 30px;
@@ -339,6 +360,36 @@ body {
             padding: 8px;
             font-size: 1.2em;
             margin: 3px;
+
+            .unit {
+                margin-top: 10px;
+            }
         }
+    }
+
+    .destination-time {
+        padding-left: 200px;
+    }
+}
+
+@media (max-width: 500px) {
+    .counter {
+        padding: 30px;
+    }
+
+    .destination-time {
+        padding: 30px;
+    }
+
+    .list-watches {
+        display: none;
+    }
+
+    .btn-add {
+        display: none;
+    }
+
+    .footer {
+        left: 0;
     }
 }

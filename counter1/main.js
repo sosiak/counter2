@@ -44,7 +44,7 @@ let counters = [];
 let uniID = 0;
 let addBtn = document.querySelector(".btn-add");
 addBtn.addEventListener("click", addBtnListener);
-smallInterval(2000);
+smallInterval(1000);
 //lang
 const plDiv = document.getElementById("pl");
 const enDiv = document.getElementById("en");
@@ -57,6 +57,13 @@ plDiv.addEventListener("click", () => {
   }
 });
 enDiv.addEventListener("click", () => {
+  const buttonWatch = document.querySelector(".btn-watch");
+  updateTextInDiv(".destination-time__title", lang[5][j]);
+  if (buttonWatch !== null) {
+    updateTextInDiv(".btn-watch", lang[7][j]);
+  }
+});
+deDiv.addEventListener("click", () => {
   const buttonWatch = document.querySelector(".btn-watch");
   updateTextInDiv(".destination-time__title", lang[5][j]);
   if (buttonWatch !== null) {

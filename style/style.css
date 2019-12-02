@@ -78,10 +78,6 @@ body {
   transition: 2s;
 }
 
-.list-watches__element__time .unit {
-  font-size: 0.5em;
-}
-
 .list-watches__element__remove-button {
   padding: 5px 5px 5px 10px;
   background-color: #EF2FA2;
@@ -192,6 +188,7 @@ body {
   background: red;
   margin: 15px 5px;
   display: inline-block;
+  border-radius: 50%;
 }
 
 .config__red:hover {
@@ -204,6 +201,7 @@ body {
   background: blue;
   margin: 15px 5px;
   display: inline-block;
+  border-radius: 50%;
 }
 
 .config__blue:hover {
@@ -250,10 +248,11 @@ body {
 
 .counter__time .unit {
   font-size: 0.5em;
+  margin-top: 5px;
 }
 
 .counter__button {
-  padding: 15px 30px;
+  padding: 10px 20px;
   background-color: #EF2FA2;
   color: white;
   font-size: 1.5em;
@@ -326,9 +325,9 @@ body {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
   .counter {
-    padding: 5vh 20px;
+    padding: 5vh 30px;
   }
   .counter__time {
     min-width: 60px;
@@ -338,14 +337,31 @@ body {
     line-height: .7em;
     margin: 5px;
   }
+}
+
+@media (max-width: 992px) {
+  .list-watches {
+    min-width: 150px;
+  }
+  .list-watches__element__time {
+    min-width: 15px;
+    min-height: 10px;
+    font-size: .8em;
+  }
+  .footer {
+    left: 150px;
+  }
+  .counter {
+    padding-left: 100px;
+  }
   .destination-time {
-    padding: 0 20px;
+    padding-left: 100px;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .counter {
-    padding: 5vh 10px;
+    padding-left: 150px;
   }
   .counter__time {
     min-width: 30px;
@@ -353,6 +369,30 @@ body {
     padding: 8px;
     font-size: 1.2em;
     margin: 3px;
+  }
+  .counter__time .unit {
+    margin-top: 10px;
+  }
+  .destination-time {
+    padding-left: 200px;
+  }
+}
+
+@media (max-width: 500px) {
+  .counter {
+    padding: 30px;
+  }
+  .destination-time {
+    padding: 30px;
+  }
+  .list-watches {
+    display: none;
+  }
+  .btn-add {
+    display: none;
+  }
+  .footer {
+    left: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */

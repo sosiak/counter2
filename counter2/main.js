@@ -45,7 +45,7 @@ let counters = [];
 let uniID = 0;
 let addBtn = document.querySelector(".btn-add");
 addBtn.addEventListener("click", addBtnListener);
-smallInterval(2000);
+smallInterval(1000);
 //lang
 const plDiv = document.getElementById("pl");
 const deDiv = document.getElementById("de");

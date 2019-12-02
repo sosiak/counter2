@@ -15,7 +15,9 @@ const colorsValues = [
     ['#5BFF62', 'rgba(91,255,98,0.4)'],
     ['#FFF851', 'rgba(255,248,81,0.4)'],
     ['#FF851B', 'rgba(0,0,0,0.4'],
-    ['#7fdbff', 'rgba(127,219,255,0.4']
+    ['#7fdbff', 'rgba(127,219,255,0.4'],
+    ['#FF0000', 'rgba(255,0,0,0.4'],
+    ['#0000FF', 'rgba(0,0,255,0.4']
 ];
 let j = 0; //lang index
 let k = 0; //colors index
@@ -440,6 +442,8 @@ function chooseColor() {
     const yellowDiv = document.querySelector('.config__yellow');
     const orangeDiv = document.querySelector('.config__orange');
     const aquaDiv = document.querySelector('.config__aqua');
+    const redDiv = document.querySelector('.config__red');
+    const blueDiv = document.querySelector('.config__blue');
     if (purpleDiv !== null) {
         purpleDiv.addEventListener('click', () => {
             k = 0;
@@ -467,6 +471,18 @@ function chooseColor() {
     if (aquaDiv !== null) {
         aquaDiv.addEventListener('click', () => {
             k = 4;
+            return k;
+        })
+    }
+    if (redDiv !== null) {
+        redDiv.addEventListener('click', () => {
+            k = 5;
+            return k;
+        })
+    }
+    if (blueDiv !== null) {
+        blueDiv.addEventListener('click', () => {
+            k = 6;
             return k;
         })
     }
